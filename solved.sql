@@ -35,11 +35,11 @@ order by count(rental_id) DESC;
 select "category", total_sales from sales_by_film_category;
 
 /* 7. Is "Academy Dinosaur" available for rent from Store 1? */
-select title, inventory_id
+select title, store.store_id,inventory_id
 from inventory
 join film on inventory.film_id=film.film_id
 join store on inventory.store_id=store.store_id
-where title="Academy Dinosaur"
+where title="Academy Dinosaur" and store.store_id=1;
 
 
 
